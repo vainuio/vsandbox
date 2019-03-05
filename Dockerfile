@@ -27,7 +27,7 @@ RUN npm install -g webpage underscore request express jade shelljs passport http
 RUN apt-get install -y git whois sudo bc catdoc antiword
 
 # Install not packaged Python libraries
-RUN pip install --no-cache-dir selenium textract html requests \
+RUN pip install --no-cache-dir selenium textract html requests pyPdf \
     git+https://github.com/timClicks/slate.git
 
 #Install Phantom JS:
