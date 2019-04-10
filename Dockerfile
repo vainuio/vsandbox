@@ -33,10 +33,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 # Install nodejs and libs
 RUN npm install -g webpage underscore request express jade shelljs passport http sys jquery lodash async mocha moment connect validator restify ejs ws co when helmet wrench brain mustache should backbone forever debug
 
-# Install not packaged Python libraries
+# Install not packaged Python2 libraries
 RUN pip install --no-cache-dir textract html pyPdf \
     git+https://github.com/timClicks/slate.git
-
+# Install not packaged Python2 libraries
+RUN pip3 install --no-cache-dir aiohttp
 #Install Phantom JS:
 RUN curl -SL https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar -xvj -C /usr/local/share/ \
 && ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
