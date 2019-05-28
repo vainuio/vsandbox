@@ -24,7 +24,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python3 python3-pip python3-lxml \
     python3-numpy python3-pandas python3-setuptools python3-dev python3-wheel \
     python3-selenium python3-requests python3-dateutil python3-openssl python3-boto3 python3-xlrd \
-    python3-xmltodict \
+    python3-xmltodict python3-sparqlwrapper \
     #phatnomjs
     libxft-dev \
     libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
