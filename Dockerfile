@@ -13,7 +13,7 @@ ENV NODE_PATH=/usr/local/lib/node_modules/
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     gcc libxml2-dev libxslt1-dev zlib1g-dev libffi-dev \
     libpulse-dev swig libxml2 libxslt1-dev curl libnss3 libgconf-2-4 unzip \
-    git whois bc catdoc antiword nano vim\
+    git whois bc catdoc antiword nano vim awscli sshpass \
     #Python2
     python python-pip python-lxml python-dev \
     python-bs4 python-pandas python-setuptools python-six \
