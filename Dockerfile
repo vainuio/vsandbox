@@ -27,6 +27,12 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python3-xmltodict python3-sparqlwrapper \
     #phatnomjs
     libxft-dev \
+    tesseract-ocr \
+    tesseract-ocr-fin \
+    tesseract-ocr-swe \
+    tesseract-ocr-nor \
+    tesseract-ocr-dan \
+    tesseract-ocr-nld \
     libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
     #npm
     nodejs npm
