@@ -1,0 +1,11 @@
+The vsandbox docker image is now available in Docker Hub. It includes Selenium, Chrome Headless, pandas and all the libraries vsandbox crawlers are using.
+
+You can use it in kubernetes as enviroment by setting:
+image: vainuiodh/vsandbox
+
+Use it locally for development:
+docker pull vainuiodh/vsandbox
+docker run -ti vainuiodh/vsandbox bash
+
+Run crawler.py in vsandbox enviroment:
+docker run -ti -v $(pwd):/crawler -w /crawler/ vainuiodh/vsandbox python crawler.py (edited) 
