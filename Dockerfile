@@ -41,7 +41,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 RUN npm install -g webpage underscore request express jade shelljs passport http sys jquery lodash async mocha moment connect validator restify ejs ws co when helmet wrench brain mustache should backbone forever debug
 
 # Install not packaged Python2 libraries
-RUN pip install --no-cache-dir textract html pyPdf \
+RUN pip install --no-cache-dir textract html pytesseract pyPdf \
     git+https://github.com/timClicks/slate.git
 # Install not packaged Python2 libraries
 RUN pip3 install --no-cache-dir aiohttp motor
