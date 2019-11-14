@@ -3,7 +3,7 @@
 # Based on Ubuntu
 ############################################################
 
-FROM ubuntu:18.04
+FROM ubuntu:18.10
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONWARNINGS ignore
@@ -28,8 +28,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     #phatnomjs
     libxft-dev \
     tesseract-ocr \
-    tesseract-ocr-fin \
     tesseract-ocr-swe \
+    tesseract-ocr-fin \
     tesseract-ocr-nor \
     tesseract-ocr-dan \
     tesseract-ocr-nld \
