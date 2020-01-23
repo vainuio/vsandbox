@@ -22,7 +22,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python-feedparser python-scrapy python-pdfminer python-selenium \
     #python3
     python3 python3-pip python3-lxml \
-    python3-numpy python3-pandas python3-setuptools python3-dev python3-wheel \
+    python3-numpy python3-setuptools python3-dev python3-wheel \
     python3-selenium python3-requests python3-dateutil python3-openssl python3-xlrd \
     python3-xmltodict python3-sparqlwrapper \
     #phatnomjs
@@ -43,8 +43,8 @@ RUN npm install -g webpage underscore request express jade shelljs passport http
 # Install not packaged Python2 libraries
 RUN pip install --no-cache-dir textract html pytesseract pyPdf \
     git+https://github.com/timClicks/slate.git
-# Install not packaged Python2 libraries
-RUN pip3 install --no-cache-dir aiohttp motor
+# Install not packaged Python3 libraries
+RUN pip3 install --no-cache-dir aiohttp motor pandas
 #Install Phantom JS:
 RUN curl -SL https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar -xvj -C /usr/local/share/ \
 && ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
