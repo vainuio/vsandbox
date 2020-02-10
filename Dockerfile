@@ -10,7 +10,7 @@ ENV PYTHONWARNINGS ignore
 ENV PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
 ENV NODE_PATH=/usr/local/lib/node_modules/
 
-COPY fin.traineddata /usr/share/tesseract-ocr/4.00/tessdata/fi.traineddata
+COPY fin.traineddata /usr/share/tesseract-ocr/4.00/tessdata/fin.traineddata
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     gcc libxml2-dev libxslt1-dev zlib1g-dev libffi-dev \
