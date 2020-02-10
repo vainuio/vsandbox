@@ -8,7 +8,6 @@ FROM ubuntu:18.10
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONWARNINGS ignore
 ENV PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
-ENV NODE_PATH=/usr/local/lib/node_modules/
 
 COPY fin.traineddata /usr/share/tesseract-ocr/4.00/tessdata/fin.traineddata
 
@@ -34,12 +33,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     tesseract-ocr-dan \
     tesseract-ocr-nld \
     #tesseract-ocr-fin \
-    libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
-    #npm
-    nodejs npm
-
-# Install nodejs and libs
-RUN npm install -g webpage underscore request express jade shelljs passport http sys jquery lodash async mocha moment connect validator restify ejs ws co when helmet wrench brain mustache should backbone forever debug
+    libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 
 # Install not packaged Python2 libraries
 RUN pip install --no-cache-dir textract html pytesseract pyPdf \
