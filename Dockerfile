@@ -10,6 +10,8 @@ ENV PYTHONWARNINGS ignore
 ENV PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
 ENV NODE_PATH=/usr/local/lib/node_modules/
 
+COPY fin.traineddata /usr/share/tesseract-ocr/4.00/tessdata/fin.traineddata
+
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     gcc libxml2-dev libxslt1-dev zlib1g-dev libffi-dev \
     libpulse-dev swig libxml2 libxslt1-dev curl libnss3 libgconf-2-4 unzip \
@@ -25,14 +27,13 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python3-numpy python3-setuptools python3-dev python3-wheel \
     python3-selenium python3-requests python3-dateutil python3-openssl python3-xlrd \
     python3-xmltodict python3-sparqlwrapper \
-    #phatnomjs
     libxft-dev \
     tesseract-ocr \
     tesseract-ocr-swe \
-    tesseract-ocr-fin \
     tesseract-ocr-nor \
     tesseract-ocr-dan \
     tesseract-ocr-nld \
+    #tesseract-ocr-fin \
     libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
     #npm
     nodejs npm
