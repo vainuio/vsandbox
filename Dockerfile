@@ -6,9 +6,8 @@
 FROM ubuntu:18.10
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHONWARNINGS ignore
+ENV PYTHONWARNINGS=ignore
 ENV PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
-ENV NODE_PATH=/usr/local/lib/node_modules/
 
 COPY fin.traineddata /usr/share/tesseract-ocr/4.00/tessdata/fin.traineddata
 
@@ -21,11 +20,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python-bs4 python-pandas python-setuptools python-six \
     python-magic python-requests python-openssl ipython \
     python-dateutil python-appdirs python-beautifulsoup \
-    python-feedparser python-scrapy python-pdfminer python-selenium \
+    python-feedparser python-scrapy python-pdfminer \
     #python3
     python3 python3-pip python3-lxml \
     python3-numpy python3-setuptools python3-dev python3-wheel \
-    python3-selenium python3-requests python3-dateutil python3-openssl python3-xlrd \
+    python3-requests python3-dateutil python3-openssl python3-xlrd \
     python3-xmltodict python3-sparqlwrapper \
     libxft-dev \
     tesseract-ocr \
@@ -34,18 +33,13 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     tesseract-ocr-dan \
     tesseract-ocr-nld \
     #tesseract-ocr-fin \
-    libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
-    #npm
-    nodejs npm
-
-# Install nodejs and libs
-RUN npm install -g webpage underscore request express jade shelljs passport http sys jquery lodash async mocha moment connect validator restify ejs ws co when helmet wrench brain mustache should backbone forever debug
+    libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 
 # Install not packaged Python2 libraries
-RUN pip install --no-cache-dir textract html pytesseract pyPdf \
+RUN pip install --no-cache-dir textract html pytesseract selenium pyPdf \
     git+https://github.com/timClicks/slate.git
 # Install not packaged Python3 libraries
-RUN pip3 install --no-cache-dir aiohttp motor pandas
+RUN pip3 install --no-cache-dir aiohttp motor pandas selenium
 #Install Phantom JS:
 RUN curl -SL https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar -xvj -C /usr/local/share/ \
 && ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
