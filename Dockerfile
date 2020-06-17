@@ -9,6 +9,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONWARNINGS=ignore
 ENV PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
 
+# For some reason tesseract-ocr-fin is not found in the ubuntu packages.
+# Other languages we are using are found and fetch fetched with apt-get
 COPY fin.traineddata /usr/share/tesseract-ocr/4.00/tessdata/fin.traineddata
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
@@ -20,7 +22,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python-bs4 python-pandas python-setuptools python-six \
     python-magic python-requests python-openssl ipython \
     python-dateutil python-appdirs python-beautifulsoup \
-    python-feedparser python-scrapy python-pdfminer \
+    python-feedparser python-scrapy python-pdfminer python-xmltodict \
     #python3
     python3 python3-pip python3-lxml \
     python3-numpy python3-setuptools python3-dev python3-wheel \
